@@ -2,7 +2,7 @@
 
 	// LOGIN.PHP
 	$email_error = "";
-	$password_uuesti_error = "";
+	$password_repeat_error = "";
 	$password_error = "";
 	// echo $_POST["email"];
 
@@ -24,8 +24,8 @@
 			if(strlen($_POST["password"]) < 8) {
 				$password_error = "VEATEADE: Parool peab olema vähemalt 8 tähemärki pikk!";
 			}
-			if($_POST["password"] != $_POST["password_uuesti"]) {
-				$password_uuesti_error = "VEATEADE: Paroolid peavad kattuma!";
+			if($_POST["password"] != $_POST["password_repeat"]) {
+				$password_repeat_error = "VEATEADE: Paroolid peavad kattuma!";
 			}
 		}
 		
@@ -52,9 +52,9 @@
 				Parool:<br>
 				<input name="password" type="password" placeholder="Parool"><br>
 				Parool uuesti:<br>
-				<input name="password_uuesti" type="password" placeholder="Parool uuesti"><br><br>
+				<input name="password_repeat" type="password" placeholder="Parool uuesti"><br><br>
 				<input type="submit" value="Registreeri"><br><br>
-				<?php echo $password_uuesti_error; ?><?php echo $password_error; ?><?php echo $email_error; ?>
+				<?php echo $password_repeat_error; ?><?php echo $password_error; ?><?php echo $email_error; ?>
 			</form>
 	</center>
 <center><a href="login.php">Kasutaja olemas? Logi sisse siin!</a></center>
